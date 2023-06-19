@@ -1,0 +1,4365 @@
+@charset "utf-8";
+
+
+html {
+  overflow-x: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Poppins";
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  word-wrap: break-word;
+  font-weight: 400;
+  background-color: #1f1f1f;
+  color: #7e7e7e;
+  overflow-x: hidden;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #999 #1f1f1f;
+}
+body:-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 6px;
+  border: 3px solid #1f1f1f;
+}
+section{
+  height: 100vh;
+  scroll-snap-align: center;
+  // scroll-snap-align: start;
+  position: relative;
+}
+
+svg {
+  width: 15px;
+  height: 15px;
+}
+img.svg {
+  width: 15px;
+  height: 15px;
+}
+.svg.custom {
+  fill: none;
+}
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #7e7e7e;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #7e7e7e;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #7e7e7e;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #7e7e7e;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #7e7e7e;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: #7e7e7e;
+}
+// .parent{
+//   height: 100vh;
+//   scroll-snap-points-y: repeat(100vh);
+//   scroll-snap-type: y mandatory;
+// }
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 0px 20px;
+  position: relative;
+  clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: "poppins";
+  color: #FFFFFF;
+}
+
+h1 {
+  font-size: 45px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
+
+.lemsainnov_tm_all_wrap {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+}
+.lemsainnov_tm_all_wrap,
+.lemsainnov_tm_all_wrap * {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+.lemsainnov_tm_section {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 99999;
+  display: flex;
+}
+#preloader:before,
+#preloader:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+#preloader .loader_line {
+  margin: auto;
+  width: 1px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.loader_line:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #1f1f1f;
+  -webkit-animation: lineheight 1000ms ease-in-out 0s forwards;
+  -o-animation: lineheight 1000ms ease-in-out 0s forwards;
+  animation: lineheight 1000ms ease-in-out 0s forwards;
+}
+.loader_line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #999999;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-animation: lineround 1200ms linear 0s infinite;
+  -o-animation: lineround 1200ms linear 0s infinite;
+  animation: lineround 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+body.dark #preloader:before,
+body.dark #preloader:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  background-color: #1f1f1f;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+body.dark #preloader:after {
+  left: auto;
+  right: 0;
+}
+body.dark .loader_line:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #555;
+  -webkit-animation: lineheight 1000ms ease-in-out 0s forwards;
+  -o-animation: lineheight 1000ms ease-in-out 0s forwards;
+  animation: lineheight 1000ms ease-in-out 0s forwards;
+}
+body.dark .loader_line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #ddd;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-animation: lineround 1200ms linear 0s infinite;
+  -o-animation: lineround 1200ms linear 0s infinite;
+  animation: lineround 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+@keyframes lineheight {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes lineround {
+  0% {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(200%);
+    -ms-transform: translateY(200%);
+    -o-transform: translateY(200%);
+    transform: translateY(200%);
+  }
+}
+
+/*hiding all*/
+.preloaded .loader_line:after {
+  opacity: 0;
+}
+.preloaded .loader_line {
+  opacity: 0;
+  height: 100% !important;
+}
+.preloaded:before,
+.preloaded:after {
+  -webkit-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+  -o-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+  animation: preloadedzero 300ms ease-in-out 500ms forwards;
+}
+@keyframes preloadedzero {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/*---------------------------------------------------*/
+/*	02) Lemsa Innovation MOBILE MENU
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_mobile_menu {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  z-index: 10;
+}
+.lemsainnov_tm_mobile_menu .my_trigger {
+  line-height: 1;
+  position: relative;
+  right: -10px;
+}
+.lemsainnov_tm_mobile_menu .mobile_menu_inner {
+  width: 100%;
+  height: auto;
+  float: left;
+  clear: both;
+  background-color: #1f1f1f;
+  padding: 15px 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+}
+.lemsainnov_tm_mobile_menu .mobile_in {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lemsainnov_tm_mobile_menu .mobile_in .logo img {
+  max-width: 100px;
+}
+.my_trigger .hamburger-box {
+  display: block;
+}
+.my_trigger .hamburger {
+  padding: 0px;
+}
+.my_trigger .hamburger .hamburger-inner::before,
+.my_trigger .hamburger .hamburger-inner::after,
+.my_trigger .hamburger .hamburger-inner {
+  background-color: #000;
+  width: 30px;
+  height: 2px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_mobile_menu .dropdown {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #1f1f1f;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  display: none;
+}
+.lemsainnov_tm_mobile_menu .dropdown .dropdown_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 25px 0px;
+}
+.lemsainnov_tm_mobile_menu .dropdown .dropdown_inner ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.lemsainnov_tm_mobile_menu .dropdown .dropdown_inner ul li {
+  margin: 0px;
+  float: left;
+  width: 100%;
+}
+.lemsainnov_tm_mobile_menu .dropdown .dropdown_inner ul li a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  padding: 4px 0px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+/*---------------------------------------------------*/
+/*	03) Lemsa Innovation SIDEBAR
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_sidebar {
+  // width: 320px;
+  // height: 100vh;
+  // position: fixed;
+  // top: 0px;
+  // left: 0;
+  // background-color: #1f1f1f;
+  // box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  // z-index: 98;
+  // transition: all 0.5s ease;
+  // @media screen and (min-width: 1200px) and (max-width: 1500px) {
+  //   width: 288px;
+  // }
+  // @media screen and (max-width: 1199px) {
+  //   transform: translateX(-100%);
+  //   &.menu-open {
+  //     transform: translateX(0);
+  //   }
+  // }
+  // @media screen and (max-width: 1040px) {
+  //   width: 280px;
+  //   z-index: 99;
+  // }
+  // @media screen and (max-width: 359px) {
+  //   width: 240px;
+  // }
+}
+.lemsainnov_tm_sidebar .logo {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  border-bottom: 1px solid #222;
+  padding: 40px;
+  @media screen and (max-width: 1199px) {
+    padding: 20px;
+  }
+}
+.lemsainnov_tm_sidebar .logo img,
+.itemsList-inner .logo img {
+  max-width: 120px;
+  @media screen and (max-width: 1199px) {
+    max-width: 100px;
+  }
+}
+.lemsainnov_tm_sidebar .menu {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 60px 40px;
+  display: flex;
+    justify-content: end;
+  @media screen and (max-width: 1199px) {
+    padding: 10px 20px 20px;
+    font-size: 10px;
+  }
+}
+.lemsainnov_tm_sidebar .menu ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.lemsainnov_tm_sidebar .menu ul li {
+  margin: 0px 0px 8px 0px;
+  width: 100%;
+  float: left;
+}
+.lemsainnov_tm_sidebar .menu ul li:last-child {
+  margin-bottom: 0px;
+}
+.lemsainnov_tm_sidebar .menu ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 9px 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  @media screen and (max-width: 1199px) {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+}
+.lemsainnov_tm_sidebar .menu ul li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #292929;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: 0;
+  border-radius: 6px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_sidebar .menu ul li a:hover:before,
+.lemsainnov_tm_sidebar .menu ul li .list_inner a.active:before {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+  background: white;
+  border-radius: 50%;
+}
+
+.lemsainnov_tm_sidebar .menu ul li .svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  filter: invert(0.3);
+  transition: all 0.3s ease;
+  @media screen and (max-width: 1199px) {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+}
+.lemsainnov_tm_sidebar .author {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #cbd3d9;
+}
+.lemsainnov_tm_sidebar .author .inner {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  @media screen and (max-width: 1199px) {
+    padding: 20px;
+  }
+}
+.lemsainnov_tm_sidebar .author .image {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: inline-block;
+}
+.lemsainnov_tm_sidebar .author .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  border: 1px solid #34495e;
+}
+.lemsainnov_tm_sidebar .short {
+  padding-left: 13px;
+}
+.lemsainnov_tm_sidebar .short h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+.lemsainnov_tm_sidebar .short a {
+  text-decoration: none;
+  color: #7e7e7e;
+  font-size: 14px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.logo_dark {
+  display: none;
+}
+/*---------------------------------------------------*/
+/*	04) Lemsa Innovation HERO
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_mainpart {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-left: 320px;
+  transition: all 0.5s ease;
+  @media screen and (min-width: 1200px) and (max-width: 1500px) {
+    padding-left: 288px;
+  }
+}
+
+.lemsainnov_tm_hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  //background-color: #f5f8fc;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .lemsainnov_tm_button {
+    margin-top: 25px;
+    a {
+      border-radius: 30px;
+      border: 2px solid transparent;
+    }
+  }
+}
+.lemsainnov_tm_hero .content {
+  padding: 100px 20px;
+}
+.lemsainnov_tm_hero .image {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  position: relative;
+  margin-bottom: 27px;
+  opacity: 1;
+  visibility: visible;
+  left: 0px;
+  transition: all 1s ease;
+}
+
+.lemsainnov_tm_hero .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+}
+.lemsainnov_tm_hero .image:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  background-color: #e2e2e2;
+  border-radius: 100%;
+}
+.lemsainnov_tm_hero .name {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 10px 0 12px;
+}
+.lemsainnov_tm_hero .extra {
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.8s;
+  transition: all 1s ease;
+  @media screen and (max-width: 575px) {
+    bottom: 130px;
+  }
+  bottom: 425px;
+}
+.lemsainnov_tm_hero .extra p{
+    font-size: 27px;
+    font-weight: 600;
+    color: #898989;
+}
+.lemsainnov_tm_hero .text {
+  max-width: 500px;
+  margin: 0px auto 32px auto;
+  font-size: 17px;
+  @media screen and (max-width: 575px) {
+    font-size: 15px;
+  }
+}
+.social {
+  margin: 0px;
+  list-style-type: none;
+  list-style: none;
+  display: inline-block;
+  text-decoration: none;
+  color: #e7e7e7;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  padding: 0px 15px;
+  p {
+    color: #e7e7e7;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    svg {
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    p{
+      color: #333;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+  }
+  svg {
+    fill: transparent;
+    color: white;
+    width: 30px;
+    height: 30px;
+  }
+
+}
+.menu .social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social a{
+  margin-right: 20px;
+
+}
+.social a:after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #e5e5e5;
+  top: 0px;
+  right: 0px;
+}
+.social a:after {
+  display: none;
+}
+.social .svg {
+  width: 19px;
+  height: 19px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/*---------------------------------------------------*/
+/*	05) Lemsa Innovation Skills
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_skills {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 140px;
+    padding-top: 90px;
+  }
+}
+.lemsainnov_tm_skills .skill_container {
+  width: 100%;
+  // margin-left: auto;
+  // margin-right: auto;
+  height: auto;
+  // padding: 0px 20px;
+  position: relative;
+  clear: both;
+}
+.lemsainnov_tm_skills .about_title {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+
+}
+.lemsainnov_tm_skills .about_title h3 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+.hello {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.lemsainnov_tm_skills .color {
+  border-radius: 6px;
+  padding: 13px 30px;
+  background: #1f1f1f;
+  border-color: #000;
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  transition: 0.5s;
+  @media screen and (max-width: 991px) {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  &:hover {
+    background: #000;
+    color: #1f1f1f;
+  }
+}
+.lemsainnov_tm_skills .content {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+}
+.lemsainnov_tm_skills .rightpart {
+  width: 50%;
+}
+
+.lemsainnov_tm_skills .rightpart .info {
+  width: 100%;
+  float: left;
+  margin-bottom: 55px;
+}
+.lemsainnov_tm_skills .rightpart .info h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_skills .rightpart .info h3 span {
+  font-weight: 600;
+  color: #52b3cb;
+}
+.lemsainnov_tm_skills .rightpart .info p {
+  max-width: 90%;
+  color: #FFFFFF;
+}
+.lemsainnov_tm_skills .my_skills {
+  padding: 10px 50px;
+  width: 100%;
+  float: left;
+  @media screen and (max-width: 1030px) {
+  padding: 0;
+  }
+}
+.lemsainnov_tm_skills .my_skills .title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_skills .dodo_progress {
+  width: 100%;
+  display: flex;
+  padding: 40px;
+  flex-wrap: wrap;
+  margin: 0 -20px 10px;
+
+  @media screen and (max-width: 575px) {
+    margin: 0;
+    padding: 0;
+
+  }
+}
+.lemsainnov_tm_skills .desc {
+  max-width: 90%;
+}
+.lemsainnov_tm_skills .wrapper .progress_inner {
+  width: 100%;
+  padding: 0 20px;
+  @media screen and (max-width: 575px) {
+    width: 100%;
+    padding: 0;
+  }
+}
+.lemsainnov_tm_skills .wrapper .right {
+  width: 50%;
+  padding: 20px;
+}
+.dodo_progress {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.progress_inner {
+  width: 100%;
+  margin-bottom: 31px;
+}
+.progress_inner .label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px; 
+  display: inline-block;
+}
+.progress_inner .background {
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+  height: 16px;
+  border: 1px solid #7e7e7e;
+  padding: 2px;
+}
+.progress_inner .background .bar_in {
+  height: 100%;
+  background: #898989;
+
+  overflow: hidden;
+}
+.progress_inner .background .bar {
+  height: 100%;
+}
+.progress_inner .background .bar.open {
+  -webkit-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Safari 4+ */
+  -moz-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Fx 5+ */
+  animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* IE 10+ */
+  width: 100%;
+}
+
+@-webkit-keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-moz-keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.lemsainnov_tm_skills .leftpart {
+  width: 100%;
+  padding-right: 100px;
+}
+.lemsainnov_tm_skills .skill_container .leftpart {
+  width: 100%;
+  background-color: #292929;
+  padding: 30px;
+  border-radius: 10px;
+}
+.lemsainnov_tm_skills .leftpart .about-container {
+background-color: #292929;
+height: 50%;
+width: 30%;
+border-radius: 20px;
+}
+.lemsainnov_tm_skills .leftpart .about-container .image {
+  position: absolute;
+}
+.lemsainnov_tm_skills .leftpart .image img {
+  position: relative;
+  min-width: 100%;
+  opacity: 0;
+}
+.lemsainnov_tm_skills .leftpart .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.lemsainnov_tm_skills .experience {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  z-index: 1;
+  width: 291px;
+  height: 291px;
+  border-radius: 100%;
+  background-color: #34495e;
+}
+.lemsainnov_tm_skills .experience .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.lemsainnov_tm_skills .experience .info h3 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+.lemsainnov_tm_skills .experience .info span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.certificate_detail{
+  display: flex;
+  background: #4d4d4d;
+  border-radius: 40px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  @media screen and (max-width: 1030px) {
+    flex-direction: column;
+    align-items: center;
+      }
+}
+.certificate_info{
+color: white;
+width: 60%;
+display: flex;
+flex-direction: column;
+@media screen and (max-width: 1030px) {
+  align-items: center;
+      h3{
+        font-size: 24px;
+      }
+    }
+   p{
+    color: #4eabc2;
+    font-weight: 600;
+   }
+}
+.certificate_img{
+  height: 80px;
+  max-width: 33%;
+  margin-left: auto;
+  @media screen and (max-width: 1030px) {
+    width: 66%;
+  }
+  img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+.certificate_img h3{
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 50%;
+    bottom:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    border-radius: 10px;
+    }
+// about popup
+.custom-modal.about-popup-wrapper {
+  .box_inner {
+    width: 1070px;
+    @media screen and (max-width: 1199px) {
+      width: 900px;
+    }
+    @media (max-width: 992px) {
+      width: 700px;
+    }
+    @media (max-width: 768px) {
+      width: 560px;
+    }
+    @media (max-width: 599px) {
+      width: 460px;
+    }
+    @media (max-width: 490px) {
+      width: 360px;
+    }
+    @media (max-width: 420px) {
+      width: 320px;
+    }
+  }
+  .lemsainnov_tm_modalbox .description_wrap {
+    padding: 0 50px;
+    @media (max-width: 460px) {
+      padding: 0 20px;
+    }
+  }
+}
+.about-popup-wrapper {
+  .lemsainnov_tm_button {
+    margin-top: 15px;
+    a {
+      border-radius: 30px;
+      font-size: 16px;
+    }
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .col-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 50px;
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .description_wrap {
+    > .row > .col-6 {
+      @media screen and (max-width: 1199px) {
+        width: 100%;
+        margin-top: 30px;
+      }
+    }
+  }
+  h3 {
+    font-size: 25px;
+    margin-bottom: 35px;
+    border-bottom: 2px dashed #ddd;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  .about-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+
+    .title {
+      opacity: 0.8;
+      text-transform: capitalize;
+    }
+    .value {
+      font-weight: 500;
+      color: #34495e;
+    }
+    li {
+      flex: 0 0 50%;
+      max-width: 50%;
+      font-size: 16px;
+      @media (max-width: 599px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      &:not(:last-child) {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+.resume-box {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding: 0 20px 0 60px;
+    margin: 0 0 50px;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 20px;
+      bottom: 0;
+      border-left: 1px solid #ddd;
+    }
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 40px;
+    text-align: center;
+    z-index: 1;
+    border-radius: 50%;
+    color: #1f1f1f;
+    background-color: #34495e;
+    img {
+      filter: invert(1);
+    }
+  }
+
+  .time {
+    color: #333;
+    font-size: 12px;
+    padding: 1px 15px;
+    display: inline-block;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    background-color: #eee;
+  }
+
+  h5 {
+    font-size: 18px;
+    margin: 7px 0 10px;
+    color: #34495e;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 27px;
+  }
+
+  .place {
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    padding-left: 26px;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 2px;
+      background-color: #444;
+      left: 7px;
+      top: 9px;
+      opacity: 0.8;
+    }
+  }
+}
+.achievements-wrapper {
+  .box-stats {
+    padding: 20px 30px 25px 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    h3 {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      font-size: 40px;
+      font-weight: 600;
+      border: none;
+      padding: 0;
+      color: #34495e;
+      @media (max-width: 599px) {
+        font-size: 30px;
+      }
+      &::after {
+        content: "+";
+        position: absolute;
+        right: -24px;
+        font-size: 33px;
+        font-weight: 300;
+        top: 2px;
+      }
+    }
+    p {
+      position: relative;
+      padding-left: 45px;
+      font-size: 16px;
+      line-height: 26px;
+      @media (max-width: 599px) {
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 13px;
+        width: 30px;
+        height: 1px;
+        background: #777;
+      }
+    }
+  }
+  .col-6 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    @media (max-width: 490px) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+}
+
+/*---------------------------------------------------*/
+/*	06) Lemsa Innovation SERVICE
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_title {
+  padding-top: 15px;
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+.lemsainnov_tm_title h3 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1;
+}
+
+.lemsainnov_tm_services {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #f5f8fc;
+  padding: 120px 0px 90px 0px;
+  @media screen and (max-width: 991px) {
+    padding: 90px 0px 60px 0px;
+  }
+}
+.lemsainnov_tm_services .service_list {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 60px;
+}
+.lemsainnov_tm_services ul {
+  margin: 0px 0px 0px -30px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.lemsainnov_tm_services ul li {
+  margin: 0px 0px 30px 0px;
+  width: 25%;
+  padding-left: 30px;
+  float: left;
+  cursor: pointer;
+  position: relative;
+}
+.lemsainnov_tm_services ul li .list_inner {
+  width: 100%;
+  height: 100%;
+  clear: both;
+  float: left;
+  position: relative;
+  background-color: #1f1f1f;
+  padding: 50px 100px 45px 50px;
+  border-radius: 6px;
+
+  .hover {
+    position: relative;
+    z-index: 5;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #000;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: inherit;
+    transition: 0.7s;
+    backface-visibility: hidden;
+  }
+  &:hover {
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.lemsainnov_tm_services ul li .list_inner:hover {
+  .svg,
+  .service_title,
+  .learn_more {
+    animation: slideLeft 0.7s ease-in-out 0s 1 normal none running !important;
+  }
+}
+.lemsainnov_tm_services ul li .svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.lemsainnov_tm_services ul li .list_inner:hover .svg {
+  color: #1f1f1f;
+  filter: invert(1);
+}
+.lemsainnov_tm_services ul li .list_inner:hover .svg.custom {
+  stroke: #1f1f1f;
+}
+.lemsainnov_tm_services ul li h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_services ul li .list_inner:hover h3 {
+  color: #1f1f1f;
+}
+.lemsainnov_tm_services ul li .learn_more {
+  text-decoration: none;
+  color: #7e7e7e;
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_services ul li .learn_more span {
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  background-color: #7e7e7e;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 14px;
+  border-radius: 50px;
+
+  transition: all 0.7s ease;
+}
+.lemsainnov_tm_services ul li .learn_more span:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 2px;
+  background-color: #7e7e7e;
+  transform: rotate(45deg);
+  right: 0px;
+  top: -2px;
+  border-radius: 50px;
+  transition: all 0.7s ease;
+}
+.lemsainnov_tm_services ul li .learn_more span:after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 2px;
+  background-color: #7e7e7e;
+  transform: rotate(-45deg);
+  right: 0px;
+  bottom: -2px;
+  border-radius: 50px;
+  transition: all 0.7s ease;
+}
+.lemsainnov_tm_services ul li .list_inner:hover .learn_more span {
+  width: 30px;
+  background-color: #1f1f1f;
+}
+.lemsainnov_tm_services ul li .list_inner:hover .learn_more span:before,
+.lemsainnov_tm_services ul li .list_inner:hover .learn_more span:after {
+  background-color: #1f1f1f;
+}
+.lemsainnov_tm_services ul li .list_inner:hover .learn_more {
+  color: #1f1f1f;
+}
+.lemsainnov_tm_full_link {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 5;
+}
+
+.lemsainnov_tm_modalbox .description_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  padding: 50px;
+  overflow-y: scroll;
+}
+.lemsainnov_tm_services .popup_informations {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: -11;
+  display: none;
+}
+.lemsainnov_tm_modalbox .service_title {
+  display: none;
+}
+.lemsainnov_tm_modalbox .description_wrap .svg {
+  display: none;
+}
+.lemsainnov_tm_modalbox .description_wrap .learn_more {
+  display: none;
+}
+.lemsainnov_tm_modalbox .description_wrap .lemsainnov_tm_full_link {
+  display: none;
+}
+.lemsainnov_tm_modalbox .popup_informations {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.lemsainnov_tm_modalbox .popup_informations .image {
+  position: relative;
+  max-height: 450px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.lemsainnov_tm_modalbox .popup_informations .image img {
+  position: relative;
+  min-width: 100%;
+  opacity: 0;
+}
+.lemsainnov_tm_modalbox .popup_informations .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.lemsainnov_tm_modalbox .popup_informations h3 {
+  color: #0f172a;
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_modalbox .popup_informations p {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+.lemsainnov_tm_modalbox .in_list {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+.lemsainnov_tm_modalbox .in_list ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.lemsainnov_tm_modalbox .in_list ul li {
+  margin: 0px 0px 15px 0px;
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-left: 20px;
+}
+.lemsainnov_tm_modalbox .in_list ul li:before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #7e7e7e;
+  left: 0px;
+  top: 13px;
+}
+.lemsainnov_tm_modalbox .in_list ul li:last-child {
+  margin-bottom: 0px;
+}
+.lemsainnov_tm_modalbox .in_list ul li p {
+  margin-bottom: 0px;
+}
+
+/*---------------------------------------------------*/
+/*	07) Lemsa Innovation PORTFOLIO
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_portfolio {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 0px 0px 120px 0px;
+  @media screen and (max-width: 991px) {
+    padding: 90px 0px 80px 0px;
+  }
+  @media screen and (max-width: 575px) {
+    padding: 90px 0px 100px 0px;
+  }
+  .my_carousel ul li .image {
+    height: auto;
+  }
+}
+.lemsainnov_tm_portfolio .portfolio_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 60px;
+}
+.my_carousel {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  padding: 5% 10% 0 10%;
+}
+.my_carousel ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.my_carousel ul li {
+  margin: 0px;
+}
+.my_carousel ul li .list_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.my_carousel ul li .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 420px;
+  @media screen and (max-width: 1500px) {
+    height: auto;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1) translateZ(0);
+    }
+  }
+}
+.lemsainnov_tm_news {
+  .my_carousel ul li .image {
+    @media screen and (max-width: 1900px) {
+      height: 235px;
+    }
+    @media screen and (max-width: 1500px) {
+      height: 225px;
+    }
+  }
+}
+.my_carousel ul li .image img {
+  position: relative;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+.my_carousel ul li .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+}
+.my_carousel ul li .list_inner:hover .image .main {
+  transform: scale(1.1) translateZ(0);
+}
+.my_carousel ul .details {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 30px;
+}
+.my_carousel ul .details h3 {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.my_carousel ul .details span {
+  text-decoration: none;
+  color: #7e7e7e;
+  font-size: 16px;
+  font-weight: 400;
+}
+.my_carousel .prev_button,
+.my_carousel .next_button {
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 2px solid #7e7e7e;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -43px;
+  z-index: 6;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .prev_button:hover,
+.my_carousel .next_button:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: #000;
+}
+.my_carousel .prev_button {
+  left: -33px;
+}
+.my_carousel .next_button {
+  right: -33px;
+}
+.my_carousel .prev_button span,
+.my_carousel .next_button span {
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: #7e7e7e;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .prev_button:hover span,
+.my_carousel .next_button:hover span {
+  background-color: #1f1f1f;
+}
+.my_carousel .prev_button span:before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #7e7e7e;
+  left: -2px;
+  top: -8px;
+  transform: rotate(-45deg);
+  border-radius: 50px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .prev_button span:after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #7e7e7e;
+  left: -2px;
+  bottom: -8px;
+  transform: rotate(45deg);
+  border-radius: 50px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .next_button span:before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #7e7e7e;
+  right: -2px;
+  top: -8px;
+  transform: rotate(45deg);
+  border-radius: 50px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .next_button span:after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: #7e7e7e;
+  right: -2px;
+  bottom: -8px;
+  transform: rotate(-45deg);
+  border-radius: 50px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.my_carousel .prev_button:hover span:before,
+.my_carousel .prev_button:hover span:after,
+.my_carousel .next_button:hover span:before,
+.my_carousel .next_button:hover span:after {
+  background-color: #1f1f1f;
+}
+
+/*---------------------------------------------------*/
+/*	08) Lemsa Innovation TESTIMONIALS
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_testimonials {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  // background-color: #f5f8fc;
+  padding: 120px 0px 0px 0px;
+  @media screen and (max-width: 991px) {
+    padding: 90px 0px 110px 0px;
+  }
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}
+.slick-dots li {
+  padding: 0 15px;
+}
+.lemsainnov_tm_testimonials .list {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 60px;
+}
+.lemsainnov_tm_testimonials .list ul {
+  margin: 0px -15px;
+  list-style-type: none;
+}
+.lemsainnov_tm_testimonials .list ul li {
+  margin: 0px;
+  padding: 0 15px;
+}
+.lemsainnov_tm_testimonials .list ul li .list_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  background-color: #1f1f1f;
+  padding: 50px 50px 60px 50px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+}
+.lemsainnov_tm_testimonials .list .details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.lemsainnov_tm_testimonials .list .author {
+  display: flex;
+  align-items: center;
+}
+.lemsainnov_tm_testimonials .list .image {
+  min-height: 250px;
+}
+.lemsainnov_tm_testimonials .list .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+}
+.lemsainnov_tm_testimonials .list .short {
+  padding: 0 20px 0 0;
+  @media screen and (max-width: 991px) {
+    padding-left: 15px;
+  }
+}
+.lemsainnov_tm_testimonials .list .tag {
+  display: flex;
+}
+.lemsainnov_tm_testimonials .list .tag p {
+  background-color: #52b3cb;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.lemsainnov_tm_testimonials .list .text {
+    bottom: 0;
+    left: 0;
+    // background: rgb(0, 0, 0);
+    background: rgba(10, 10, 10, 0.80);
+    color: #f1f1f1;
+    padding: 20px;
+    position: absolute;
+    border-radius: 25px;
+}
+.lemsainnov_tm_testimonials .list .text h3 {
+  // font-size: 20px;
+  font-weight: 500;
+}
+.lemsainnov_tm_testimonials .list .short span {
+  font-size: 16px;
+  font-weight: 400;
+}
+.lemsainnov_tm_testimonials .list .text p {
+padding-bottom: 10px;}
+.lemsainnov_tm_testimonials .owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 33px;
+}
+.lemsainnov_tm_testimonials .owl-theme .owl-dots .owl-dot span {
+  margin: 0px 10px 0px 0px;
+  width: 14px;
+  height: 14px;
+  background-color: #7e7e7e;
+  border: 1px solid transparent;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_testimonials .owl-theme .owl-dots .owl-dot.active span {
+  background-color: transparent;
+  border-color: #34495e;
+  width: 16px;
+  height: 16px;
+}
+.lemsainnov_tm_testimonials .svg {
+  width: 80px;
+  height: 80px;
+}
+
+/*---------------------------------------------------*/
+/*	09) Lemsa Innovation NEWS
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_news {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 120px 0px;
+  @media screen and (max-width: 991px) {
+    padding: 90px 0px;
+  }
+  @media screen and (max-width: 575px) {
+    padding: 90px 0px 110px;
+  }
+}
+.news_inner.my_carousel ul li {
+  @media screen and (max-width: 575px) {
+    padding-bottom: 15px;
+  }
+}
+.lemsainnov_tm_news .news_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 60px;
+}
+.lemsainnov_tm_news ul li .news_details {
+  width: 100%;
+  float: left;
+  padding-top: 9px;
+}
+.lemsainnov_tm_news ul li .news_details span {
+  font-size: 16px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.lemsainnov_tm_news ul li .news_details span a {
+  text-decoration: none;
+  color: #7e7e7e;
+  position: relative;
+  display: inline-block;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_news ul li .news_details span a:before {
+  position: relative;
+  content: ".";
+  font-size: 40px;
+  top: -3px;
+  color: #7e7e7e;
+  padding: 0px 5px;
+}
+.lemsainnov_tm_news ul li .news_details .title {
+  line-height: 1.2;
+}
+.lemsainnov_tm_news ul li .news_details .title {
+  text-decoration: none;
+  color: #34495e;
+  font-size: 22px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.lemsainnov_tm_modalbox .details {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+.lemsainnov_tm_modalbox .description_wrap .image {
+  position: relative;
+  height: 450px;
+  margin-bottom: 20px;
+  background: #efefef;
+  border-radius: 6px;
+  @media screen and (max-width: 575px) {
+    height: 240px;
+  }
+}
+.lemsainnov_tm_modalbox .description_wrap .image img {
+  min-width: 100%;
+  opacity: 0;
+}
+.lemsainnov_tm_modalbox .description_wrap .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.lemsainnov_tm_modalbox .news_details {
+  margin-bottom: 20px;
+}
+.lemsainnov_tm_modalbox .news_details .title {
+  font-weight: 600;
+  font-size: 23px;
+  margin-bottom: 9px;
+}
+.lemsainnov_tm_modalbox .news_details .title a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.lemsainnov_tm_modalbox .news_details span {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.lemsainnov_tm_modalbox .news_details span a {
+  text-decoration: none;
+  color: #7e7e7e;
+  position: relative;
+  display: inline-block;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_modalbox .news_details span a:before {
+  position: relative;
+  content: ".";
+  font-size: 40px;
+  top: -3px;
+  color: #7e7e7e;
+  padding: 0px 5px;
+}
+.lemsainnov_tm_news .main_content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: -11;
+  display: none;
+}
+body.modal {
+  overflow-y: hidden;
+}
+.lemsainnov_tm_modalbox .main_content {
+  width: 100%;
+  float: left;
+}
+.lemsainnov_tm_modalbox .main_content .descriptions {
+  width: 100%;
+  float: left;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_modalbox .main_content .descriptions .bigger {
+  color: #888;
+  font-size: 20px;
+  margin-bottom: 31px;
+}
+.lemsainnov_tm_modalbox .main_content .descriptions p {
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+.lemsainnov_tm_modalbox .main_content .quotebox {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.lemsainnov_tm_modalbox .main_content .quotebox p {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 23px;
+  border-left: 2px solid #FFFFFF;
+  padding-left: 30px;
+  color: #FFFFFF;
+}
+
+/*---------------------------------------------------*/
+/*	10) Lemsa Innovation CONTACT
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_contact {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #f5f8fc;
+  padding: 120px 0px;
+  @media screen and (max-width: 991px) {
+    padding: 90px 0px;
+  }
+  .icon {
+    width: 55px;
+    height: 55px;
+    background: #34495e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 25px;
+      filter: invert(1);
+      height: 25px;
+    }
+  }
+  .content {
+    flex: 1;
+    padding-left: 15px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.lemsainnov_tm_contact .extra_info {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 60px;
+  margin-bottom: 30px;
+}
+.lemsainnov_tm_contact .extra_info .wrapper {
+  margin: 0px 0px 0px -30px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.lemsainnov_tm_contact .extra_info .wrapper > li {
+  margin: 0px 0px 30px 0px;
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  padding-left: 30px;
+}
+.lemsainnov_tm_contact .extra_info .wrapper > li .list_inner {
+  display: flex;
+  align-items: flex-start;
+  background-color: #1f1f1f;
+  padding: 33px 35px 41px 35px;
+  border-radius: 6px;
+  @media screen and (max-width: 1199px) {
+    padding: 20px;
+  }
+}
+.lemsainnov_tm_contact .extra_info .in {
+  margin: 0px;
+  list-style-type: none;
+}
+.lemsainnov_tm_contact .extra_info .in li {
+  margin: 0px;
+  width: 100%;
+  float: left;
+  font-size: 16px;
+}
+.lemsainnov_tm_contact .extra_info .in li :last-child {
+  margin-bottom: 0px;
+}
+.lemsainnov_tm_contact .extra_info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.lemsainnov_tm_contact .extra_info a {
+  text-decoration: none;
+  color: #7e7e7e;
+}
+.lemsainnov_tm_contact .mainpart {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+}
+.lemsainnov_tm_contact .mainpart .left {
+  width: 50%;
+  background-color: #1f1f1f;
+  padding: 50px 45px 55px 45px;
+  margin-right: 30px;
+  border-radius: 6px;
+}
+.lemsainnov_tm_contact .mainpart .left .title {
+  width: 100%;
+  float: left;
+  margin-bottom: 14px;
+}
+.lemsainnov_tm_contact .mainpart .left .title p {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.lemsainnov_tm_contact .mainpart .left .title span {
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.lemsainnov_tm_contact .fields {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.lemsainnov_tm_contact .first_row {
+  width: 100%;
+  margin-bottom: 60px;
+}
+.lemsainnov_tm_contact .second {
+  width: 100%;
+  margin-bottom: 60px;
+}
+.lemsainnov_tm_contact .third {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.lemsainnov_tm_contact input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #cbd3d9;
+  background-color: transparent;
+  font-size: 16px;
+  color: #7e7e7e;
+  font-weight: 500;
+  font-family: "Poppins";
+  padding-left: 0px !important;
+}
+.lemsainnov_tm_contact input:focus {
+  outline: none;
+  border-bottom-color: #0f172a;
+  background-color: transparent;
+}
+.lemsainnov_tm_contact textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #cbd3d9;
+  background-color: transparent;
+  font-size: 16px;
+  color: #7e7e7e;
+  font-weight: 500;
+  font-family: "Poppins";
+  height: 50px;
+  resize: none;
+  padding-left: 0px !important;
+}
+.lemsainnov_tm_contact textarea:focus {
+  outline: none;
+  border-bottom-color: #0f172a;
+  background-color: transparent;
+}
+.lemsainnov_tm_contact .empty_notice {
+  color: #f52225;
+  margin-bottom: 7px;
+  display: none;
+  text-align: left;
+  font-weight: 500;
+}
+.lemsainnov_tm_contact .contact_error {
+  color: #f52225;
+  text-align: left;
+  font-weight: 500;
+}
+.lemsainnov_tm_contact .returnmessage {
+  color: #3a00ff;
+  margin-bottom: 7px;
+  text-align: left;
+  font-weight: 500;
+}
+.lemsainnov_tm_contact .lemsainnov_tm_button button {
+  border-radius: 6px;
+  padding: 11px 33px;
+  background: #1f1f1f;
+}
+.lemsainnov_tm_button {
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.lemsainnov_tm_button a,
+.lemsainnov_tm_button button {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+  display: inline-block;
+  padding: 8px 35px 7px 35px;
+  transition: all 0.01s ease;
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+.lemsainnov_tm_button a:hover,
+.lemsainnov_tm_contact .lemsainnov_tm_button button:hover {
+  border: 2px solid #7e7e7e;
+}
+.lemsainnov_tm_contact .right {
+  width: 50%;
+  margin-left: 30px;
+}
+.lemsainnov_tm_contact .right .google-map {
+  border: 5px solid #1f1f1f;
+  border-radius: 6px;
+  height: 100%;
+  width: 100%;
+  @media screen and (max-width: 1199px) {
+    height: 350px;
+  }
+  @media screen and (max-width: 575px) {
+    height: 300px;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+    filter: grayscale(1);
+  }
+}
+
+/*---------------------------------------------------*/
+/*	 BEKER INTRO
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_intro {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.lemsainnov_tm_intro .main_title {
+  width: 100%;
+  float: left;
+}
+.lemsainnov_tm_intro .main_title img {
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_intro .main_title p {
+  font-size: 22px;
+  font-weight: 500;
+  color: #323232;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  }
+}
+.lemsainnov_tm_intro .hero .content p {
+  font-size: 30px;
+  font-weight: 500;
+  color: #1f1f1f;
+  padding: 45px 0px;
+}
+a {
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_intro .lemsainnov_tm_button a {
+  color: #1f1f1f;
+  border-color: #1473e6;
+  background-color: #1473e6;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+.lemsainnov_tm_intro .mainpart {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  @media screen and (max-width: 767px) {
+    padding-top: 90px;
+    padding-bottom: 35px;
+    height: auto;
+  }
+}
+.lemsainnov_tm_intro .main_title {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  text-align: center;
+}
+.lemsainnov_tm_intro .main_title span {
+  color: #1473e6;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.lemsainnov_tm_intro .main_title h3 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.lemsainnov_tm_intro .demo_list {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  margin-top: 70px;
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+  }
+}
+.lemsainnov_tm_intro .demo_list ul {
+  list-style-type: none;
+}
+.lemsainnov_tm_intro .demo_list ul li {
+  margin: 0px 0px 80px 0px;
+  width: 50%;
+  float: left;
+  text-align: center;
+  .list_inner {
+    transition: 0.3s;
+  }
+  &:hover {
+    .list_inner {
+      transform: scale(0.96);
+    }
+  }
+}
+.lemsainnov_tm_intro .container {
+  max-width: 1400px;
+  .slick-slide {
+    padding: 0 30px;
+    img {
+      display: inline;
+    }
+  }
+  .slick-dots {
+    bottom: -35px;
+    display: flex !important;
+    width: auto !important;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    li {
+      padding: 0 10px;
+    }
+  }
+}
+.preview-sticker .logo {
+  filter: invert(1);
+}
+.lemsainnov_tm_intro .demo_list ul li .list_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  min-height: 250px;
+}
+.lemsainnov_tm_intro .demo_list ul li .list_inner img {
+  border-radius: 6px;
+  background: #efefef;
+  padding: 15px;
+}
+.lemsainnov_tm_intro .demo_list ul li .list_inner h3 {
+  font-size: 24px;
+  font-weight: 600;
+  padding-top: 30px;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+}
+.lemsainnov_tm_intro .go_purchase {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #000000;
+  padding: 120px 20px 120px 20px;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    padding: 100px 20px;
+  }
+  .lemsainnov_tm_button a {
+    border-color: #1473e6 !important;
+  }
+}
+.lemsainnov_tm_intro .go_purchase h6 {
+  color: #efefef;
+  margin-bottom: 10px;
+}
+.lemsainnov_tm_intro .go_purchase h3 {
+  color: #1f1f1f;
+  max-width: 600px;
+  font-weight: 600;
+  margin: 0 auto;
+  font-size: 35px;
+  display: block;
+  padding: 10px 0 30px;
+  letter-spacing: 1px;
+  line-height: 45px;
+  text-transform: none;
+  .theme-color {
+    color: #1473e6;
+  }
+}
+.lemsainnov_tm_intro .copyright {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 15px 20px;
+}
+.lemsainnov_tm_intro .copyright p {
+  font-size: 14px;
+  color: #faf9fd;
+}
+.lemsainnov_tm_intro .copyright p a {
+  color: #1f1f1f;
+  text-decoration: none;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.lemsainnov_tm_intro .copyright p a:hover {
+  color: #1473e6;
+}
+
+/*---------------------------------------------------*/
+/*	11) Lemsa Innovation MEDIA QUERIES (FOR SMALL DEVIVES)
+/*---------------------------------------------------*/
+
+@media (max-width: 1600px) {
+  .container {
+    max-width: 1170px;
+  }
+  .lemsainnov_tm_hero .image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .lemsainnov_tm_skills .leftpart {
+    padding-left: 120px;
+  }
+  .lemsainnov_tm_skills .skill_container .leftpart {
+    width: 100%;
+    padding: 30px;
+  }
+  .lemsainnov_tm_skills .experience {
+    width: 250px;
+    height: 250px;
+  }
+  .lemsainnov_tm_skills .experience .info h3 {
+    font-size: 35px;
+  }
+  .lemsainnov_tm_skills .experience .info span {
+    font-size: 19px;
+  }
+
+  .lemsainnov_tm_services ul li .list_inner {
+    padding-right: 40px;
+  }
+  .lemsainnov_tm_services ul li h3 {
+    font-size: 22px;
+  }
+  .lemsainnov_tm_testimonials .list .short h3 {
+    font-size: 19px;
+  }
+  .lemsainnov_tm_testimonials .list .short span {
+    font-size: 16px;
+  }
+  .lemsainnov_tm_testimonials .svg {
+    width: 60px;
+    height: 60px;
+  }
+  .lemsainnov_tm_testimonials .list .image {
+    width: 100px;
+    height: 100px;
+  }
+  .lemsainnov_tm_testimonials .list .text p {
+    font-size: 12px;
+  }
+  .lemsainnov_tm_contact .mainpart .left .title p {
+    font-size: 20px;
+    @media (max-width: 575px) {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .lemsainnov_tm_mainpart {
+    padding-left: 0;
+  }
+}
+@media (max-width: 1040px) {
+  .lemsainnov_tm_mobile_menu {
+    display: block;
+  }
+
+  .lemsainnov_tm_mainpart {
+    padding-left: 0px;
+  }
+  body .lemsainnov_tm_mainpart {
+    padding-left: 0px;
+  }
+  .lemsainnov_tm_skills .content {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .lemsainnov_tm_skills .rightpart .info p {
+    max-width: 100%;
+  }
+  .lemsainnov_tm_skills .desc {
+    max-width: 100%;
+  }
+  .lemsainnov_tm_skills .rightpart {
+    width: 100%;
+    margin-bottom: 0;
+    order: 2;
+  }
+  .lemsainnov_tm_skills .leftpart {
+    width: 100%;
+    padding-left: 0px;
+    margin-bottom: 80px;
+  }
+  .lemsainnov_tm_skills .experience {
+    left: 50px;
+  }
+  .lemsainnov_tm_services ul li {
+    width: 50%;
+  }
+
+  .lemsainnov_tm_contact .mainpart {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .lemsainnov_tm_contact .mainpart .left {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 50px;
+  }
+  .lemsainnov_tm_contact .right {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .lemsainnov_tm_modalbox .close {
+    margin-left: 10px;
+  }
+  .lemsainnov_tm_modalbox .close .svg {
+    width: 25px;
+    height: 25px;
+  }
+  .lemsainnov_tm_modalbox .description_wrap {
+    padding: 15px;
+  }
+  .lemsainnov_tm_modalbox .popup_informations h3 {
+    font-size: 20px;
+  }
+  .lemsainnov_tm_modalbox .news_details span {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .container {
+    padding: 0px 20px;
+  }
+
+  .lemsainnov_tm_intro .go_purchase h3 {
+    font-size: 40px;
+  }
+  .lemsainnov_tm_intro .main_title h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .lemsainnov_tm_contact .extra_info .wrapper > li {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .lemsainnov_tm_skills .wrapper {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .lemsainnov_tm_contact .extra_info .wrapper {
+    margin: 0px;
+  }
+
+  .lemsainnov_tm_skills .wrapper .left {
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 30px;
+  }
+  .lemsainnov_tm_skills .wrapper .right {
+    width: 100%;
+    padding: 0px;
+  }
+  .lemsainnov_tm_skills .experience {
+    width: 150px;
+    height: 150px;
+    left: 15px;
+  }
+  .lemsainnov_tm_skills .experience .info {
+    line-height: 1.2;
+    h3 {
+      font-size: 22px;
+    }
+  }
+  .lemsainnov_tm_skills .experience .info span {
+    font-size: 13px;
+  }
+  .lemsainnov_tm_hero .name {
+    font-size: 36px;
+  }
+  .lemsainnov_tm_hero .image {
+    width: 200px;
+    height: 200px;
+  }
+  .lemsainnov_tm_skills .about_title h3 {
+    font-size: 35px;
+  }
+  .lemsainnov_tm_title h3 {
+    font-size: 35px;
+  }
+
+  .my_carousel .prev_button,
+  .my_carousel .next_button {
+    width: 50px;
+    height: 50px;
+  }
+  .my_carousel .next_button {
+    right: -25px;
+  }
+  .my_carousel .prev_button {
+    left: -25px;
+  }
+  .my_carousel .prev_button span,
+  .my_carousel .next_button span {
+    width: 25px;
+  }
+  .my_carousel .next_button span:before {
+    width: 15px;
+    top: -5px;
+  }
+  .my_carousel .next_button span:after {
+    width: 15px;
+    bottom: -5px;
+  }
+  .my_carousel .prev_button span:before {
+    width: 15px;
+    top: -5px;
+  }
+  .my_carousel .prev_button span:after {
+    width: 15px;
+    bottom: -5px;
+  }
+  .lemsainnov_tm_testimonials .list ul li .list_inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .lemsainnov_tm_services ul li .list_inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .lemsainnov_tm_contact .mainpart .left {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .lemsainnov_tm_contact .extra_info .wrapper > li .list_inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .lemsainnov_tm_intro .main_title h3 {
+    font-size: 30px;
+  }
+  .lemsainnov_tm_intro .go_purchase h3 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  .lemsainnov_tm_intro .demo_list ul {
+    margin: 0px;
+    margin-left: -30px;
+    @media (max-width: 767px) {
+      margin-left: 0;
+    }
+  }
+  .lemsainnov_tm_intro .demo_list ul li {
+    padding-left: 30px;
+    @media (max-width: 767px) {
+      padding-left: 0;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .lemsainnov_tm_contact .extra_info .wrapper > li {
+    width: 100%;
+    padding-left: 0px;
+  }
+  .lemsainnov_tm_services ul {
+    margin: 0px;
+  }
+  .lemsainnov_tm_services ul li {
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 480px) {
+  .lemsainnov_tm_testimonials .list .details {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .lemsainnov_tm_testimonials .list .author {
+    margin-bottom: 30px;
+  }
+  .lemsainnov_tm_testimonials .list .image {
+    width: 75px;
+    height: 75px;
+  }
+  .lemsainnov_tm_testimonials .list .short h3 {
+    font-size: 17px;
+  }
+  .lemsainnov_tm_testimonials .list .short span {
+    font-size: 14px;
+  }
+  .lemsainnov_tm_testimonials .list .text p {
+    font-size: 17px;
+  }
+  .lemsainnov_tm_testimonials .list .details {
+    margin-bottom: 25px;
+  }
+  .lemsainnov_tm_hero .name {
+    font-size: 32px;
+  }
+}
+
+// slick
+.slick-prev,
+.slick-next {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #7e7e7e;
+  border-radius: 50%;
+  z-index: 6;
+  transition: 0.5s;
+  top: 41%;
+  @media screen and (max-width: 575px) {
+    display: none !important;
+  }
+  &::before {
+    display: none;
+  }
+  &::after {
+    content: url(../../arrow.svg);
+    filter: invert(0.4);
+    transition: 0.5s;
+  }
+  &:hover {
+    background: #111;
+    border-color: #1f1f1f;
+    &::after {
+      filter: invert(1);
+    }
+  }
+}
+.slick-prev {
+  @media screen and (max-width: 1599px) {
+    left: 0;
+    background: #111;
+    border-color: #1f1f1f;
+    &::after {
+      filter: invert(1);
+    }
+    &.slick-disabled {
+      background: transparent;
+      border-color: #555;
+      &::after {
+        filter: invert(0.5);
+      }
+    }
+  }
+  &::after {
+    display: block;
+    transform: rotate(-180deg);
+  }
+}
+.slick-next {
+  @media screen and (max-width: 1599px) {
+    right: 0;
+    background: #111;
+    border-color: #1f1f1f;
+    &::after {
+      filter: invert(1);
+    }
+    &.slick-disabled {
+      background: transparent;
+      border-color: #555;
+      &::after {
+        filter: invert(0.5);
+      }
+    }
+  }
+}
+.my_carousel ul {
+  margin: 0 -15px;
+  li .list_inner {
+    padding: 0 15px;
+  }
+}
+.slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+}
+.slick-dots li button:after,
+.slick-dots li button:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+}
+.slick-dots li button:before {
+  font-size: 0;
+  opacity: 1;
+  border: 2px solid #555;
+  border-radius: 50%;
+}
+.slick-dots li button:after {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  background: #555;
+  border-radius: inherit;
+  z-index: 5;
+}
+.slick-dots li.slick-active button:after {
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+}
+.portfolio_inner {
+  .slick-prev,
+  .slick-next {
+    top: 50%;
+  }
+}
+
+.news_share {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  span {
+    color: #000;
+    font-weight: 500;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    li {
+      a {
+        color: #7e7e7e;
+        padding: 0 7px;
+        display: flex;
+        transition: 0.3s;
+        &:hover {
+          color: #555;
+          transform: translateY(-3px);
+        }
+      }
+    }
+    svg {
+      fill: transparent;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.img-shape {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  bottom: 640px;
+ 
+  img {
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    -webkit-mask-size: auto auto;
+    -webkit-mask-image: url(../../hero-shape.svg);
+    mask-image: url(../../hero-shape.svg);
+  }
+}
+.invalid-feedback,
+.valid-feedback {
+  color: red;
+  font-size: 15px;
+}
+.valid-feedback {
+  color: green;
+}
+.scroll_up {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  z-index: 99;
+  cursor: pointer;
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+.beny_tm_totop {
+  position: relative;
+  overflow: hidden;
+  background-color: #4d4d4d;
+  padding: 22px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.beny_tm_totop:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border: 5px solid transparent;
+  border-bottom-color: #1f1f1f;
+  top: 14px;
+  left: 17px;
+  z-index: 2;
+}
+// mobile menu
+.mob-itemsList {
+  position: fixed;
+  right: 20px;
+  top: 13px;
+  z-index: 99;
+  display: none;
+  @media screen and (max-width: 1199px) {
+    display: block;
+  }
+}
+
+.toggler-menu {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  border-radius: 50%;
+  padding: 0;
+  background: #000;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 2px;
+    margin: auto;
+    background: #1f1f1f;
+    color: #1f1f1f;
+    transition: 0.3s;
+  }
+}
+
+.toggler-menu span {
+  transition: 0.3s;
+}
+.toggler-menu span:nth-child(1) {
+  top: -15px;
+}
+.toggler-menu span:nth-child(2) {
+  top: 1px;
+}
+.toggler-menu span:nth-child(3) {
+  top: auto;
+  bottom: 13px;
+}
+.toggler-menu .active span:nth-child(1) {
+  top: 0px;
+  transform: rotate(45deg);
+}
+.toggler-menu .active span:nth-child(2) {
+  left: 50%;
+  width: 0px;
+}
+.toggler-menu .active span:nth-child(3) {
+  top: 15px;
+  transform: rotate(-45deg);
+}
+
+.preview-sticker {
+  width: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c1d24;
+  color: #1f1f1f;
+  font-weight: 400 !important;
+  font-size: 16px;
+  flex-direction: column;
+  border-radius: 0 0 80px 80px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 99;
+  line-height: 1.1;
+  padding: 15px 0;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.preview-sticker h6 {
+  color: #1f1f1f;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.preview-sticker img {
+  max-width: 30px;
+}
+
+// tooltip wrapper
+.tooltip-wrapper {
+  background: transparent !important;
+  margin: 0 !important;
+  &::after {
+    display: none !important;
+  }
+  h5 {
+    margin: 0;
+    font-size: 18px;
+    padding: 10px 15px;
+    background: #1f1f1f;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #000 !important;
+  }
+  span {
+    font-size: 15px;
+    display: inline-block;
+    font-style: italic;
+    background: #1f1f1f;
+    padding: 0 15px 5px;
+    position: relative;
+    top: -10px;
+  }
+}
+.divider{
+  color: #1f1f1f;
+}
+// itemsList mobile
+.itemsList-area {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  // background: #1f1f1f;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 9;
+  padding: 20px 0;
+  display: none;
+  @media (max-width: 1199px) {
+    display: block;
+  }
+}
+
+.itemsList-inner {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// portfolio
+.portfoiol_content-inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  .left-content {
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding: 0 15px;
+    @media (max-width: 991px) {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+    @media (max-width: 767px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .title {
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 23px;
+    }
+    p {
+      margin-bottom: 22px;
+      font-size: 16px;
+      padding-right: 10%;
+
+      @media (max-width: 767px) {
+        padding-right: 0;
+      }
+    }
+  }
+  .right-content {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+    margin-top: 20px;
+
+    @media (max-width: 991px) {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+    @media (max-width: 767px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .list {
+      list-style: none;
+      > li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        h5 {
+          font-size: 16px;
+        }
+        span {
+          font-size: 14px;
+          line-height: 1.3;
+          display: inline-block;
+          a {
+            color: #777;
+            text-decoration: none;
+            word-break: break-all;
+            &:hover {
+              color: rgb(196, 94, 87);
+            }
+          }
+        }
+        &.news_share {
+          display: block;
+          ul {
+            margin: 0 -7px;
+
+            svg {
+              width: 17px;
+              height: 17px;
+            }
+          }
+
+          h5 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rtl .portfoiol_content-inner .left-content p {
+  padding-right: 0;
+  padding-left: 10%;
+  @media (max-width: 767px) {
+    padding-left: 0;
+  }
+}
+
+// horizontal menu
+
+
+@media (min-width: 1200px) {
+  .horizontal-menu {
+    .lemsainnov_tm_sidebar {
+      width: 100%;
+      position: static;
+      height: auto;
+      background: transparent;
+
+      .menu {
+        height: auto;
+        float: none;
+        padding: 0;
+      }
+
+      .logo {
+        float: none;
+        border-bottom: none;
+        padding: 0;
+        height: auto;
+      }
+
+      .author {
+        display: none;
+      }
+
+      .sidebar_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 40px;
+      }
+      .menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        li {
+          margin: 0;
+          width: auto;
+          float: none;
+          margin-left: 5px;
+
+          a {
+            justify-content: center;
+            padding: 5px 20px;
+          }
+
+          .svg {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+  .lemsa{
+    display: flex;
+    list-style-type: none;  
+    padding: 5px;
+  }
+  .lemsa ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    li {
+      margin: 0;
+      width: auto;
+      float: none;
+      margin-left: 25px;
+
+      a {
+        justify-content: center;
+        padding: 5px 20px;
+      }
+
+    }
+  }
+  .fixed-itemsList .lemsainnov_tm_sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    // background: #1f1f1f;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+  }
+}
+
+.theme-switcher-label.horizontal {
+  width: 55px;
+  border-radius: 30px 0 0 30px;
+  top: 40%;
+  transform: translateY(-40%);
+  left: auto;
+  right: 0;
+}
+
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.theme-dark .fixed-itemsList .lemsainnov_tm_sidebar {
+  background: #000;
+}
+
+// My css
+
+.lemsa 
+  li {
+    margin-right: 25px;
+
+    a {
+      justify-content: center;
+      padding: 5px 20px;
+    }
+
+  }
+  .hero_mail{
+    position:absolute;
+    bottom:150px;
+    right:8%;
+    background:#292929;
+    border-radius:10px;
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 991px) {
+      bottom:100px;
+    }
+  }
+  .hero_mail a {
+    margin: 0;
+    right:10%;
+  }
+  .uk-container{
+    
+    background: #292929;
+    border-radius: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    @media screen and (max-width: 991px) {
+      width: 75%;
+    }
+  }
+  .uk-container img{
+    height: 20vh;
+  }
+  .rizzflask {
+    padding: 10px 50px 50px 50px;
+    @media screen and (max-width: 991px) {
+    padding: 0;
+    }
+  }
+
+  // Timline CSS
+
+
+  .spinner-5 {
+    position: absolute;
+    width: 50%;
+    aspect-ratio: 1;
+    display: grid;
+    border:4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #292929;
+    animation: s5 10s infinite linear;
+    top: -2%;
+    left: 25%;
+    padding: 100px;
+  }
+  .spinner-5::before,
+  .spinner-5::after {    
+    content: "";
+    grid-area: 1/1;
+    // margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: s5 2s infinite;
+
+  }
+  .spinner-5::after {
+    margin: 100px;
+    animation-duration: 3s;
+    padding: 30px ;
+    
+  }
+  
+  @keyframes s5{ 
+    100%{transform: rotate(1turn)}
+  }
+
+
+  @media (max-width: 1200px) { 
+    .horizontal-menu {
+      .sidebar_inner {
+        display: flex;
+      }
+    }
+  }
+
+  .circle1{
+
+    border: 2px solid;
+    border-radius: 50%;
+    width: 1250px;
+    position: absolute;
+    height: 1250px;
+    bottom: 200px;
+  }
+
+  .circle2{
+
+    border: 2px solid;
+    border-radius: 50%;
+    width: 1000px;
+    position: absolute;
+    height: 1000px;
+    bottom: 312px;
+  }
+
+
+  .circle3{
+    border: 2px solid;
+    border-radius: 50%;
+    width: 750px;
+    position: absolute;
+    height: 750px;
+    bottom: 425px;
+  }
+  .circle4{
+    border: 2px solid;
+    border-radius: 50%;
+    width: 500px;
+    position: absolute;
+    height: 500px;
+    bottom: 537px;
+  }
+
+
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline .edina_tm_title{
+  
+}
+.timeline ul {
+  padding: 100px 50px 0 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+}
+
+.timeline ul li::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+  z-index: 1;
+  background: #1f1f1f;
+  border-color: white;
+  border-style: solid;
+}
+
+.timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+}
+
+.timeline ul li div::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+
+
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+
+
+time {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.timeline ul li p {
+  color: #FFFFFF;
+}
+
+// -----------------------------------------------//
+.divImag{
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+.timeline .left{
+  justify-content: end;
+}
+.fromImg{
+background-image: url("../../img/experience/from.png");
+background-repeat: no-repeat;
+background-size: cover;
+width: 100px;
+height: 39px;
+font-size: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.toImg{
+  background-image: url("../../img/experience/to.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 39px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+// Lemsa Innovation ABOUT
+
+
+/*---------------------------------------------------*/
+/*	05) EDINA ABOUT
+/*---------------------------------------------------*/
+
+.lemsainnov_tm_about {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 120px;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 140px;
+    padding-top: 90px;
+  }
+}
+.lemsainnov_tm_about .skill_container {
+  width: 100%;
+  // margin-left: auto;
+  // margin-right: auto;
+  height: auto;
+  // padding: 0px 20px;
+  position: relative;
+  clear: both;
+}
+.lemsainnov_tm_about .about_title {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+
+}
+.lemsainnov_tm_about .about_title h3 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 10%;
+}
+.hello {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.lemsainnov_tm_about .color {
+  border-radius: 6px;
+  padding: 13px 30px;
+  background: #1f1f1f;
+  border-color: #000;
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  transition: 0.5s;
+  @media screen and (max-width: 991px) {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  &:hover {
+    background: #000;
+    color: #1f1f1f;
+  }
+}
+.lemsainnov_tm_about .content {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+  @media screen and (max-width: 991px) {
+    flex-direction: column-reverse;
+  }
+}
+.lemsainnov_tm_about .rightpart {
+  width: 100%;
+}
+
+.lemsainnov_tm_about .rightpart .info {
+  width: 100%;
+  float: left;
+  margin-bottom: 55px;
+}
+.lemsainnov_tm_about .rightpart .info h3 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_about .rightpart .info h3 span {
+  font-weight: 600;
+  color: #52b3cb;
+}
+.lemsainnov_tm_about .rightpart .info p {
+  max-width: 90%;
+  color: #FFFFFF;
+  font-size: 21px;
+}
+.lemsainnov_tm_about .my_skills {
+  width: 100%;
+  float: left;
+}
+.lemsainnov_tm_about .my_skills .title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.lemsainnov_tm_about .dodo_progress {
+  width: 100%;
+  display: flex;
+  padding-top: 40px;
+  flex-wrap: wrap;
+  margin: 0 -20px 10px;
+
+  @media screen and (max-width: 575px) {
+    margin: 0;
+  }
+}
+.lemsainnov_tm_about .desc {
+  max-width: 90%;
+}
+.lemsainnov_tm_about .wrapper .progress_inner {
+  width: 100%;
+  padding: 0 20px;
+  @media screen and (max-width: 575px) {
+    width: 100%;
+    padding: 0;
+  }
+}
+.lemsainnov_tm_about .wrapper .right {
+  width: 50%;
+  padding: 20px;
+}
+.dodo_progress {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.progress_inner {
+  width: 100%;
+  margin-bottom: 31px;
+}
+.progress_inner .label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px; 
+  display: inline-block;
+}
+.progress_inner .background {
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+  height: 16px;
+  border: 1px solid #7e7e7e;
+  padding: 2px;
+}
+.progress_inner .background .bar_in {
+  height: 100%;
+  background: #898989;
+
+  overflow: hidden;
+}
+.progress_inner .background .bar {
+  height: 100%;
+}
+.progress_inner .background .bar.open {
+  -webkit-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Safari 4+ */
+  -moz-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Fx 5+ */
+  animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* IE 10+ */
+  width: 100%;
+}
+
+@-webkit-keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-moz-keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes wow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.lemsainnov_tm_about .leftpart {
+  width: 100%;
+  padding-right: 100px;
+  @media screen and (max-width: 991px) {
+    padding-right: 0px;
+  }
+}
+.lemsainnov_tm_about .skill_container .leftpart {
+  width: 50%;
+  background-color: #292929;
+  padding: 50px 100px;
+  border-radius: 10px;
+}
+.lemsainnov_tm_about .leftpart .about-container {
+background-color: #292929;
+height: 50%;
+width: 30%;
+border-radius: 20px;
+}
+.lemsainnov_tm_about .leftpart .about-container .image {
+  position: absolute;
+}
+.lemsainnov_tm_about .leftpart .image img {
+  position: relative;
+  min-width: 100%;
+  opacity: 0;
+}
+.lemsainnov_tm_about .leftpart .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.lemsainnov_tm_about .experience {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  z-index: 1;
+  width: 291px;
+  height: 291px;
+  border-radius: 100%;
+  background-color: #34495e;
+}
+.lemsainnov_tm_about .experience .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.lemsainnov_tm_about .experience .info h3 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+.lemsainnov_tm_about .experience .info span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+// about popup
+.custom-modal.about-popup-wrapper {
+  .box_inner {
+    width: 1070px;
+    @media screen and (max-width: 1199px) {
+      width: 900px;
+    }
+    @media (max-width: 992px) {
+      width: 700px;
+    }
+    @media (max-width: 768px) {
+      width: 560px;
+    }
+    @media (max-width: 599px) {
+      width: 460px;
+    }
+    @media (max-width: 490px) {
+      width: 360px;
+    }
+    @media (max-width: 420px) {
+      width: 320px;
+    }
+  }
+  .lemsainnov_tm_modalbox .description_wrap {
+    padding: 0 50px;
+    @media (max-width: 460px) {
+      padding: 0 20px;
+    }
+  }
+}
+.about-popup-wrapper {
+  .lemsainnov_tm_button {
+    margin-top: 15px;
+    a {
+      border-radius: 30px;
+      font-size: 16px;
+    }
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .col-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 50px;
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .description_wrap {
+    > .row > .col-6 {
+      @media screen and (max-width: 1199px) {
+        width: 100%;
+        margin-top: 30px;
+      }
+    }
+  }
+  h3 {
+    font-size: 25px;
+    margin-bottom: 35px;
+    border-bottom: 2px dashed #ddd;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  .about-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+
+    .title {
+      opacity: 0.8;
+      text-transform: capitalize;
+    }
+    .value {
+      font-weight: 500;
+      color: #34495e;
+    }
+    li {
+      flex: 0 0 50%;
+      max-width: 50%;
+      font-size: 16px;
+      @media (max-width: 599px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      &:not(:last-child) {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+.resume-box {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    padding: 0 20px 0 60px;
+    margin: 0 0 50px;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 20px;
+      bottom: 0;
+      border-left: 1px solid #ddd;
+    }
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 40px;
+    text-align: center;
+    z-index: 1;
+    border-radius: 50%;
+    color: #1f1f1f;
+    background-color: #34495e;
+    img {
+      filter: invert(1);
+    }
+  }
+
+  .time {
+    color: #333;
+    font-size: 12px;
+    padding: 1px 15px;
+    display: inline-block;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    background-color: #eee;
+  }
+
+  h5 {
+    font-size: 18px;
+    margin: 7px 0 10px;
+    color: #34495e;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 27px;
+  }
+
+  .place {
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    padding-left: 26px;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 2px;
+      background-color: #444;
+      left: 7px;
+      top: 9px;
+      opacity: 0.8;
+    }
+  }
+}
+.achievements-wrapper {
+  .box-stats {
+    padding: 20px 30px 25px 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    h3 {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      font-size: 40px;
+      font-weight: 600;
+      border: none;
+      padding: 0;
+      color: #34495e;
+      @media (max-width: 599px) {
+        font-size: 30px;
+      }
+      &::after {
+        content: "+";
+        position: absolute;
+        right: -24px;
+        font-size: 33px;
+        font-weight: 300;
+        top: 2px;
+      }
+    }
+    p {
+      position: relative;
+      padding-left: 45px;
+      font-size: 16px;
+      line-height: 26px;
+      @media (max-width: 599px) {
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 13px;
+        width: 30px;
+        height: 1px;
+        background: #777;
+      }
+    }
+  }
+  .col-6 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    @media (max-width: 490px) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+}
+.social_about{
+display: flex;
+}
+.social_about .icon{
+  padding-left: 10px;
+  width: 33%;
+}
+.social_about .bg{
+  background: #292929;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+// =================scroll css
+/* Common styles and resets */
+
+.dotstyle ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  @media screen and (max-width: 991px) {
+    display: none;
+      }
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	margin: 10px 16px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.3);
+	text-indent: -999em; /* make the text accessible to screen readers */
+	cursor: pointer;
+	position: absolute;
+}
+
+.dotstyle li a:focus {
+	outline: none;
+}
+.sidebar_list{
+  z-index: 1;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+}
+.experience_section{
+  height: 100%;
+}
+.skills_section{
+  height: 100vh;
+}
+.project_section{
+  height: 100vh;
+}
+.project_card{
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  height: 60vh;
+}
+.project_card:hover {
+  // transform: translateY(-10px);
+  transform: scale(1.05);
+}
+.img_point1{
+  position: absolute;
+  z-index: 1;
+  height: 150px;
+  right: 0;
+  top:0;
+}
+.img_point2{
+  position: absolute;
+  z-index: 1;
+  height: 150px;
+  left: 0;
+  top: 25px;
+}
+.img_point3{
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  left: -150px;
+}
+.img_point4{
+  position: absolute;
+  z-index: 1;
+  right: -200%;
+  top: 0;
+  height: 150px;
+}
+.img_point5{
+  position: absolute;
+  right: 0;
+  top: 75px;
+  height: 190px;
+  z-index: -1;
+}

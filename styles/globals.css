@@ -1,0 +1,147 @@
+.leftPartForMobileDevice {
+  display: none;
+}
+
+.img_point1 {
+  top: 100px !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .uk-container {
+    width: unset !important;
+  }
+  /* .certificate_img {
+    max-width: unset !important;
+    margin: 0 auto;
+  } */
+
+  .certificate_detail {
+    flex-direction: row !important;
+  }
+  .certificate_info {
+    flex-direction: column;
+    align-items: start;
+  }
+  .lemsainnov_tm_hero .extra {
+    bottom: 260px;
+  }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+  .hero_mail {
+    bottom: 163px;
+  }
+  .lemsainnov_tm_hero .extra {
+    bottom: 260px;
+  }
+  .timeline ul li {
+    margin: unset !important;
+    margin-left: 40px !important;
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: 50px !important;
+  }
+  .second-experience {
+    margin-left: -170px;
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  .leftPartForMobileDevice {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+  .leftPartForBigDevice {
+    display: none !important;
+  }
+
+  .lemsainnov_tm_hero .extra {
+    bottom: 290px;
+  }
+  .hero_mail {
+    bottom: 219px;
+  }
+  .img_point1 {
+    display: none;
+  }
+  .lemsainnov_tm_sidebar .logo {
+    width: unset !important;
+    float: unset !important;
+    margin: 0 auto;
+  }
+  .res-hero {
+    margin-top: 130px;
+  }
+  .social-logo-container {
+    display: flex;
+  }
+
+  /* .main-logo-container {
+    margin: 0 auto;
+  } */
+
+  .menu-mail {
+    display: none !important;
+  }
+
+  .uk-container {
+    width: 50% !important;
+    justify-content: space-between;
+  }
+
+  .uk-container h4 {
+    font-size: 14px !important;
+  }
+  .social_about {
+    display: flex;
+    font-size: 10px !important;
+  }
+  .social p {
+    font-size: 14px !important;
+  }
+  .lemsainnov_tm_title {
+    margin-top: 210px;
+  }
+
+  /* .certificate_img {
+    max-width: unset !important;
+    margin: 0 auto;
+  } */
+
+  .certificate_detail {
+    flex-direction: row !important;
+  }
+  .certificate_info {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .timeline ul li {
+    margin: unset !important;
+    margin-left: 40px !important;
+  }
+  .experience-container h3 {
+    margin-top: -200px !important;
+  }
+  .right-container {
+    margin-left: -20px;
+  }
+  .firstImg time {
+    margin-top: -60px !important;
+  }
+  .experience-details {
+    font-size: 10px !important;
+  }
+
+  .timeline ul li:nth-child(even) div {
+    left: 50px !important;
+  }
+  .second-experience {
+    margin-left: -170px;
+  }
+  .lemsainnov_tm_portfolio {
+    padding-top: 0px !important;
+  }
+}
