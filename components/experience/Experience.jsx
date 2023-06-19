@@ -17,7 +17,7 @@ const Experience = () => {
                 data-aos-duration="1200"
                 data-aos-delay="100"
               >
-                <h3> Experience()</h3>
+                <h3 id="eperience"> Experience()</h3>
                 <img
                   className="img_point3"
                   src="/img/points/points3.png"

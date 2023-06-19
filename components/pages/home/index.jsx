@@ -16,7 +16,7 @@ const Home = () => {
         <Hero />
       </section>
 
-      <section className="project_section" id="projects">
+      <section className="project_section">
         <div className="lemsainnov_tm_testimonials">
           <img className="img_point1" src="/img/points/points.png" alt="" />
 
@@ -27,7 +27,7 @@ const Home = () => {
               data-aos-duration="1200"
               data-aos-delay="100"
             >
-              <h3>Projects</h3>
+              <h3 id="projects">Projects</h3>
             </div>
             <div className="list">
               <ul>
@@ -38,11 +38,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="skills" className="skills_section">
+      <section  className="skills_section">
         <Skills />
       </section>
 
-      <section className="experience_section" id="eperience">
+      <section className="experience_section">
         <Experience />
       </section>
 
