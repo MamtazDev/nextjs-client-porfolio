@@ -85,7 +85,7 @@ const About = () => {
               data-aos-duration="1200"
               data-aos-delay="100"
             >
-              <h3>About Me</h3> <br />
+              <h3 className="aboutme_headline">About Me</h3> <br />
               <div className="leftpart leftPartForMobileDevice">
                 <div
                   className="uk-container"

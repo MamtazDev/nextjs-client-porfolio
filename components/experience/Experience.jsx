@@ -39,9 +39,9 @@ const Experience = () => {
                     <time className="toImg">Now</time>{" "}
                   </span>
                   <span>
-                    <h2>Company A</h2>
+                    <h2 className="company_text">Company A</h2>
                   </span>
-                  <span style={{ display: "flex" }}>
+                  <span style={{ display: "flex" }} className="job_text">
                     <h3>(</h3>
                     <h3 style={{ color: "#52b3cb", fontWeight: "500" }}>
                       Job A
@@ -73,9 +73,9 @@ const Experience = () => {
                     <time className="toImg">Now</time>
                   </span>
                   <span className="second-experience-texts">
-                    <h2>Company A</h2>
+                    <h2 className="company_text">Company A</h2>
                   </span>
-                  <span style={{ display: "flex" }}>
+                  <span style={{ display: "flex" }} className="job_text">
                     <h3>(</h3>
                     <h3 style={{ color: "#52b3cb", fontWeight: "500" }}>
                       Job A
@@ -112,9 +112,9 @@ const Experience = () => {
                     <time className="toImg">Now</time>
                   </span>
                   <span>
-                    <h2>Company A</h2>
+                    <h2 className="company_text">Company A</h2>
                   </span>
-                  <span style={{ display: "flex" }}>
+                  <span style={{ display: "flex" }} className="job_text">
                     <h3>(</h3>
                     <h3 style={{ color: "#52b3cb", fontWeight: "500" }}>
                       Job A

@@ -144,4 +144,15 @@
   .lemsainnov_tm_portfolio {
     padding-top: 0px !important;
   }
+  .aboutme_headline {
+    font-size: 35px !important;
+    text-align: center;
+  }
+
+  .company_text {
+    font-size: 23px;
+  }
+  .job_text h3 {
+    font-size: 19px !important;
+  }
 }
