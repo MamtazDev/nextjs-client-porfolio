@@ -76,6 +76,7 @@
   }
   .social-logo-container {
     display: flex;
+    border: unset !important;
   }
 
   /* .main-logo-container {
