@@ -6,6 +6,15 @@
   top: 100px !important;
 }
 
+@media screen and (width: 1280px) and (height: 800px) {
+  .hero_mail {
+    bottom: 190px;
+  }
+  .res-hero {
+    margin-top: 90px;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .uk-container {
     width: unset !important;
@@ -155,5 +164,12 @@
   }
   .job_text h3 {
     font-size: 19px !important;
+  }
+  .timeline ul li p {
+    max-width: 230px;
+    text-align: justify;
+  }
+  .lemsainnov_tm_testimonials .list .short {
+    padding-left: unset !important;
   }
 }

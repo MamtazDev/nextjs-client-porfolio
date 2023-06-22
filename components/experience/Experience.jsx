@@ -50,13 +50,14 @@ const Experience = () => {
                   </span>
                   <p className="experience-details">
                     Responsibilities:
-                    <br />
-                    - Lorem Lorem lorem lorem lorem lorem loren
-                    <br />
-                    - Lorem Lorem lorem lorem lorem lorem lorem loren lorem
-                    <br />
-                    - Lorem Lorem lorem lorem lorem loren, lorem
-                    <br />- Lorem Lorem lorem lorem lorem lorem lore
+                    <p> - Lorem Lorem lorem lorem lorem lorem loren</p>
+                    <p>
+                      {" "}
+                      - Lorem Lorem lorem lorem lorem lorem lorem loren lorem
+                      dfafafd afafad adfadsf adfadf adsf asdfad asdfas adfdfadf
+                    </p>
+                    <p> - Lorem Lorem lorem lorem lorem loren, lorem</p>
+                    <p>- Lorem Lorem lorem lorem lorem lorem lore</p>
                   </p>{" "}
                   <br />
                 </div>
