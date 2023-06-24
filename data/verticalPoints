@@ -1,20 +1,22 @@
 module.exports = [
   {
     itemRoute: "#home",
-    activeClass: "active"
+    activeClass: "active",
   },
   {
     itemRoute: "#projects",
-    activeClass: ""
+    activeClass: "",
   },
   {
-    itemRoute: "#skills",
-    activeClass: ""
+    itemRoute: "#skill",
+    activeClass: "",
   },
-  { 
-    itemRoute: "#eperience", 
-    activeClass: "" },
-  { 
+  {
+    itemRoute: "#experiencs",
+    activeClass: "",
+  },
+  {
     itemRoute: "#about",
-    activeClass: "" },
+    activeClass: "",
+  },
 ];

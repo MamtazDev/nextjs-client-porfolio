@@ -57,7 +57,10 @@ const Experience = () => {
                       dfafafd afafad adfadsf adfadf adsf asdfad asdfas adfdfadf
                     </p>
                     <p> - Lorem Lorem lorem lorem lorem loren, lorem</p>
-                    <p>- Lorem Lorem lorem lorem lorem lorem lore</p>
+                    <p>
+                      - Lorem Lorem lorem lorem lorem lorem lore fklfj afjklsfdj
+                      fkljafklaj afjaklf fjklafjd
+                    </p>
                   </p>{" "}
                   <br />
                 </div>

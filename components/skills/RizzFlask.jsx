@@ -13,6 +13,8 @@ const RizzFlask = () => {
     speed: 800,
     slidesToShow: 3,
     slidesToScroll: 3,
+    autoplay: false,
+    draggable: true,
     rows: 3,
     responsive: [
       {
@@ -20,6 +22,8 @@ const RizzFlask = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          autoplay: true,
+          draggable: true,
           speed: 300,
           dots: true,
         },

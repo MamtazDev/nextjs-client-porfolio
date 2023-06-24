@@ -172,4 +172,7 @@
   .lemsainnov_tm_testimonials .list .short {
     padding-left: unset !important;
   }
+  .skills_section {
+    z-index: 1 !important;
+  }
 }
